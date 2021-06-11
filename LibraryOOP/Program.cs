@@ -11,7 +11,7 @@ namespace LibraryOOP
         static void Main(string[] args)
         {
             // Need to check if this file path works 
-            string filePath = @"/../../../../../Books.txt";
+            string filePath = @"/Users/katedatema/Projects/LibraryOOP/LibraryOOP/Books.txt";
 
             // pulling in the info from student.txt document
             StreamReader reader = new StreamReader(filePath);
@@ -33,13 +33,22 @@ namespace LibraryOOP
                 }
             }
 
+            Console.WriteLine("This is what we have in our Libary!");
+            Console.WriteLine(" ");
+
+            foreach (Book bookObj in bookList)
+            {
+                bookObj.ReturnInfo();
+            }
+
+
 
         }
 
         public static Book ConvertToBookObj(string line)
         {
             string[] properties = line.Split(',');
-            Book bookObj = new Book();
+            Book bookObj = new Book("null","null", "null");
 
             if (properties.Length == 3)
             {
@@ -53,7 +62,6 @@ namespace LibraryOOP
                 return null;
             }
         }
-
 
         public static string BookObjToString(Book bookobj)
         {
