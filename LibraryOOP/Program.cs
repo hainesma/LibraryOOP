@@ -50,7 +50,11 @@ namespace LibraryOOP
             //string userInput = Console.ReadLine();
             Library ourLibrary = new Library(bookList);
 
-            ourLibrary.SearchByTitle(bookList);
+            List<Book> searchResults = ourLibrary.SearchByAuthor();
+            foreach (Book result in searchResults)
+            {
+                Console.WriteLine(result.Title);
+            }
 
         }
 
