@@ -4,30 +4,34 @@ using System.Text;
 
 namespace LibraryOOP
 {
-    public class Library
+    class Library
     {
         List<Book> Books = new List<Book>();
-
 
         public Library(List<Book> Books)
         {
             this.Books = Books;
         }
+        
 
 
-        public static Book SearchByAuthor()
+        public virtual void SearchByAuthor(List<Book> Books)
         {
             string userInput;
             Console.Write("Which Author would you like to search for?: ");
             userInput = Console.ReadLine().Trim().ToLower();
 
-            for (i = 0; i < Books.count; i++)
+            for (int i = 0; i < Books.Count; i++)
             {
 
-                if (Books.Author.contains(userInput))
-                { Console.WriteLine(Books[i]); }
+                if (Books[i].Author.Contains(userInput))
+                {
+                    Console.WriteLine(Books[i]);
+                    continue; 
+                }
                 else
                 {
+                    Console.WriteLine("There were no books found with that author");
                     continue;
                 }
             }
