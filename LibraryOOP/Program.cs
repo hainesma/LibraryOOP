@@ -11,7 +11,7 @@ namespace LibraryOOP
         static void Main(string[] args)
         {
             // Need to check if this file path works 
-            string filePath = @"/Users/katedatema/Projects/LibraryOOP/LibraryOOP/Books.txt";
+            string filePath = @"../../../Books.txt";
 
             // pulling in the info from student.txt document
             StreamReader reader = new StreamReader(filePath);
