@@ -37,17 +37,20 @@ namespace LibraryOOP
 
             Console.WriteLine("This is what we have in our Library!");
             Console.WriteLine(" ");
+            
 
             foreach (Book bookObj in bookList)
             {
                 Console.WriteLine(bookObj.Title);
             }
 
+            Console.WriteLine();
+
             //Console.WriteLine("Would you like to search for a book");
             //string userInput = Console.ReadLine();
             Library ourLibrary = new Library(bookList);
 
-            ourLibrary.SearchByAuthor(bookList);
+            ourLibrary.SearchByTitle(bookList);
 
         }
 
