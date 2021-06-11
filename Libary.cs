@@ -4,7 +4,7 @@ using System.Text;
 
 namespace LibraryOOP
 {
-    public class Library
+    class Library
     {
         List<Book> Books = new List<Book>();
 
@@ -21,7 +21,7 @@ namespace LibraryOOP
             Console.Write("Which Author would you like to search for?: ");
             userInput = Console.ReadLine().Trim().ToLower();
 
-            for (i = 0; i < Books.count; i++)
+            for (i=0; i<Books.count; i++)
             {
 
                 if (Books.Author.contains(userInput))
@@ -32,9 +32,10 @@ namespace LibraryOOP
                 }
             }
 
-
+      
 
         }
+
+
     }
-        
 }

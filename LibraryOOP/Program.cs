@@ -10,7 +10,7 @@ namespace LibraryOOP
     {
         static void Main(string[] args)
         {
-            // Need to check if this file path works 
+            
             string filePath = @"../../../Books.txt";
 
             // pulling in the info from student.txt document
@@ -18,7 +18,7 @@ namespace LibraryOOP
             string output = reader.ReadToEnd();
 
             // splitting each line and putting them in a list
-            string[] lines = output.Split('\n');
+            string[] lines = output.Split('\n');ourLibrary
 
             //creating a list to store objects 
             List<Book> bookList = new List<Book>();
@@ -32,16 +32,21 @@ namespace LibraryOOP
                     bookList.Add(book);
                 }
             }
+            Library ourLibrary = new Library(List<Book >bookList);
 
-            Console.WriteLine("This is what we have in our Libary!");
+
+            Console.WriteLine("This is what we have in our Library!");
             Console.WriteLine(" ");
 
             foreach (Book bookObj in bookList)
             {
-                bookObj.ReturnInfo();
+                Console.WriteLine(bookObj.Title);
             }
 
+            //Console.WriteLine("Would you like to search for a book");
+            //string userInput = Console.ReadLine();
 
+            SearchByAuthor();
 
         }
 
