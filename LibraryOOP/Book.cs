@@ -18,5 +18,11 @@ namespace LibraryOOP
         public Status Status { get; set; }
 
         public Book(string title, string author, DateTime dueDate, Status status)
+        {
+            Title = title;
+            Author = author;
+            DueDate = dueDate;
+            Status = status;
+        }
     }
 }
