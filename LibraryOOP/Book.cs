@@ -17,5 +17,16 @@ namespace LibraryOOP
             Author = author;
             Status = status;
         }
+
+        public void ReturnInfo()
+        {
+            Console.WriteLine($"Title {Title}");
+            Console.WriteLine($"Author {Author}");
+            Console.WriteLine($"Status {Status}");
+            Console.WriteLine(" ");
+        }
+
     }
+
+
 }
