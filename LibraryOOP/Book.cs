@@ -23,6 +23,42 @@ namespace LibraryOOP
             Date = date;
         }
 
+
+        public virtual void DisplayBookMenu()
+        {
+            bool goOn = true;
+            while (goOn == true)
+            {
+                // Display options
+                Console.WriteLine($"{Title}");
+                Console.WriteLine("1) Display book info");
+                Console.WriteLine("2) Check out book");
+                Console.WriteLine("3) Return to main menu");
+                Console.WriteLine();
+
+                // Get user's selection
+                int choice = Program.GetInteger(4);
+
+                // If statements to route choices
+                if (choice == 1)
+                {
+                    ReturnInfo();
+                    Console.WriteLine();
+                    Console.WriteLine("What would you like to do now?");
+                }
+                else if (choice == 2)
+                {
+                    Console.WriteLine(Checkout());
+                }
+                else if (choice == 3)
+                {
+                    // Return to main menu
+                    goOn = false;
+                }
+                
+            }
+        }
+
         public void ReturnInfo()
         {
             Console.ForegroundColor = ConsoleColor.Cyan;
