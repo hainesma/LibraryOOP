@@ -11,6 +11,17 @@ namespace LibraryOOP
         static void Main(string[] args)
         {
 
+            List<Book> bookList = new List<Book>(ReadInBooks());
+            Library ourLibrary = new Library(bookList);
+
+            ourLibrary.DisplayMenu(bookList);
+
+        }
+
+        
+
+        public static List<Book> ReadInBooks()
+        {
             string filePath = @"../../../Books.txt";
 
             // pulling in the info from student.txt document
@@ -21,7 +32,7 @@ namespace LibraryOOP
             string[] lines = output.Split('\n');
 
             //creating a list to store objects 
-            List<Book> bookList = new List<Book>();
+            List<Book> loadedBooks = new List<Book>();
 
             //adding book objects to a list 
             foreach (string line in lines)
@@ -29,43 +40,10 @@ namespace LibraryOOP
                 Book book = ConvertToBookObj(line);
                 if (book != null)
                 {
-                    bookList.Add(book);
+                    loadedBooks.Add(book);
                 }
             }
-
-
-            Console.WriteLine("This is what we have in our Library!");
-            Console.WriteLine(" ");
-
-
-            foreach (Book bookObj in bookList)
-            {
-                Console.WriteLine(bookObj.Title);
-
-            }
-
-            Console.WriteLine();
-
-            //Console.WriteLine("Would you like to search for a book");
-            //string userInput = Console.ReadLine();
-
-            Library ourLibrary = new Library(bookList);
-
-            List<Book> searchResults = ourLibrary.SearchByAuthor();
-            foreach (Book result in searchResults)
-            {
-                Console.WriteLine(result.Title);
-                result.ReturnInfo();
-            }
-
-            Book b1 = new Book("title", "author", "status", new DateTime(2021, 6, 01));
-
-
-            b1.Return();
-
-
-
-
+            return loadedBooks;
         }
 
         public static Book ConvertToBookObj(string line)
