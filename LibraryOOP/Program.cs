@@ -72,5 +72,29 @@ namespace LibraryOOP
             string output = $"{bookobj.Title}, {bookobj.Author}, {bookobj.Status} \n";
             return output;
         }
+
+        public static int GetInteger(int maxChoices)
+        {
+            string input = "";
+            int output = 0;
+            try
+            {
+                input = Console.ReadLine();
+                output = int.Parse(input);
+                if (output > maxChoices || output < 1 )
+                {
+                    throw new Exception("That number is out of range.");
+                }
+            }
+            catch (FormatException)
+            {
+                Console.WriteLine("That was not a valid input.");
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+            return output;
+        }
     }
 }

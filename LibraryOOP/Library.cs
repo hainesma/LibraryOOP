@@ -49,6 +49,7 @@ namespace LibraryOOP
                     {
                         Console.WriteLine(result.Title);
                     }
+
                 }
                 else if (choice == 3)
                 {
@@ -65,6 +66,16 @@ namespace LibraryOOP
                     goOn = false;
                 }
             }
+        }
+
+        public virtual Book PickABook(List<Book> books)
+        {
+            Console.WriteLine("Please select a book to proceed.");
+            for(int i = 0; i < books.Count; i++)
+            {
+                Console.WriteLine($"{i + 1}: {books[i]}");
+            }
+
         }
 
         public virtual List<Book> SearchByAuthor()
