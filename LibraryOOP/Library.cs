@@ -15,29 +15,50 @@ namespace LibraryOOP
         
 
 
-        public virtual void SearchByAuthor(List<Book> Books)
+        public virtual List<Book> SearchByAuthor()
         {
             string userInput;
             Console.Write("Which Author would you like to search for?: ");
             userInput = Console.ReadLine().Trim().ToLower();
-
+            List<Book> authorMatch = new List<Book>();
             for (int i = 0; i < Books.Count; i++)
             {
+                
 
-                if (Books[i].Author.Contains(userInput))
+                if (Books[i].Author.ToLower().Contains(userInput))
                 {
-                    Console.WriteLine(Books[i]);
-                    continue; 
+                    authorMatch.Add(Books[i]);
                 }
                 else
                 {
-                    Console.WriteLine("There were no books found with that author");
                     continue;
                 }
             }
+            return authorMatch;
+        }
+        
 
+        public virtual List<Book> SearchByTitle()
+        {
+            string userInput;
+            Console.Write("Which Title would you like to search for?: ");
+            userInput = Console.ReadLine().Trim().ToLower();
+            List<Book> titleMatch = new List<Book>();
+            for (int i = 0; i < Books.Count; i++)
+            {
+                
 
-
+                if (Books[i].Title.ToLower().Contains(userInput))
+                {
+                    titleMatch.Add(Books[i]);
+                }
+                else
+                {
+                    continue;
+                }
+                
+            }
+            return titleMatch;
         }
     }
         
