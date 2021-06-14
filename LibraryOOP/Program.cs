@@ -75,9 +75,7 @@ namespace LibraryOOP
             try
             {
                 input = Console.ReadLine();
-                Console.WriteLine($"input: {input}");
                 output = int.Parse(input);
-                Console.WriteLine($"output: {output}");
                 if (output > maxChoices|| output < 1 )
                 {
                     throw new Exception("That number is out of range.");

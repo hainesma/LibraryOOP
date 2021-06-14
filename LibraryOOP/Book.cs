@@ -31,8 +31,7 @@ namespace LibraryOOP
                 Console.WriteLine($"{Title}");
                 Console.WriteLine("1) Display book info");
                 Console.WriteLine("2) Check out book");
-                Console.WriteLine("3) Return to search results");
-                Console.WriteLine("4) Return to main menu");
+                Console.WriteLine("3) Return to main menu");
                 Console.WriteLine();
 
                 // Get user's selection
@@ -51,15 +50,10 @@ namespace LibraryOOP
                 }
                 else if (choice == 3)
                 {
-                    // Return to search results
+                    // Return to main menu
                     goOn = false;
                 }
-                else if (choice == 4)
-                {
-                    // Exit the library
-                    Console.WriteLine("Thank you for visiting the Library!");
-                    goOn = false;
-                }
+                
             }
         }
 
