@@ -1,6 +1,7 @@
 ﻿
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Text;
 
 namespace LibraryOOP
@@ -8,6 +9,7 @@ namespace LibraryOOP
 
     class Book
     {
+        
         public string Title { get; set; }
         public string Author { get; set; }
         public string Status { get; set; }
@@ -62,11 +64,14 @@ namespace LibraryOOP
 
         public void ReturnInfo()
         {
+
             Console.Clear();
-            Console.WriteLine($"Title {Title}");
-            Console.WriteLine($"Author {Author}");
-            Console.WriteLine($"Status {Status}");
-            Console.WriteLine($"Date: {Date}");
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            
+            Console.WriteLine("Information on "+ Title);
+            Console.WriteLine("----------------------------------------------------------------------------");
+            Console.WriteLine("Title  \t\t\t\t Author \t\t\t\t Status");
+            Console.WriteLine(Title + " \t\t" + Author + "\t\t\t" + Status);
             Console.WriteLine(" ");
         }
 
@@ -114,9 +119,9 @@ namespace LibraryOOP
                 DateTime current = DateTime.Now;
                 String diff = (current - Date).TotalDays.ToString();
                 double diffNum = Convert.ToInt64(Math.Round(Convert.ToDouble(diff)));
-                Console.WriteLine($"The book that you are returning is overdue by {diff} days!");
-                //int fines = diffNum * 5;
-
+                Console.BackgroundColor = ConsoleColor.Red;
+                Console.WriteLine($"The book that you are returning is overdue by {diffNum} days!");
+                double fines = diffNum * 5;
                 DateTime returnDate = new DateTime(0001, 01, 01);
                 Date = returnDate;
 
