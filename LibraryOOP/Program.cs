@@ -43,16 +43,15 @@ namespace LibraryOOP
                     loadedBooks.Add(book);
                 }
             }
-
             return loadedBooks;
         }
 
         public static Book ConvertToBookObj(string line)
         {
             string[] properties = line.Split(',');
-            Book bookObj = new Book("null", "null", "null");
+            Book bookObj = new Book("null", "null", "null", new DateTime(01, 01, 01));
 
-            if (properties.Length == 3)
+            if (properties.Length == 4)
             {
                 bookObj.Title = properties[0];
                 bookObj.Author = properties[1];
@@ -64,6 +63,9 @@ namespace LibraryOOP
                 return null;
             }
         }
+
+
+        
 
         public static string BookObjToString(Book bookobj)
         {
