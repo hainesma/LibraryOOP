@@ -55,27 +55,15 @@ namespace LibraryOOP
             foreach (Book result in searchResults)
             {
                 Console.WriteLine(result.Title);
+                result.ReturnInfo();
             }
-
-            Book b1 = new Book("title", "author", "status", "01.01.01");
-
-            b1.DueDue();
-
-            b1.ReturnInfo();
-            
-
-            b1.Return();
-
-            b1.ReturnInfo();
-
-
 
         }
 
         public static Book ConvertToBookObj(string line)
         {
             string[] properties = line.Split(',');
-            Book bookObj = new Book("null", "null", "null", "null");
+            Book bookObj = new Book("null", "null", "null", new DateTime(01, 01, 01));
 
             if (properties.Length == 4)
             {
@@ -89,6 +77,7 @@ namespace LibraryOOP
                 return null;
             }
         }
+
 
         
 

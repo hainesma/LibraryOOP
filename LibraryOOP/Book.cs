@@ -11,9 +11,9 @@ namespace LibraryOOP
         public string Title { get; set; }
         public string Author { get; set; }
         public string Status { get; set; }
-        public string Date { get; set; }
+        public DateTime Date { get; set; }
 
-        public Book(string title, string author, string status, string date)
+        public Book(string title, string author, string status, DateTime date)
         {
             Title = title;
             Author = author;
@@ -30,16 +30,16 @@ namespace LibraryOOP
             Console.WriteLine(" ");
         }
 
-        public virtual string DueDue()
+        public virtual DateTime DueDue()
         {
-            string dueDate = DateTime.Now.AddDays(14).ToString("dd.MM.yy");
+            DateTime dueDate = DateTime.Now.AddDays(14);
             Date = dueDate;
             return Date;
         }
 
-        public virtual string Return()
+        public virtual DateTime Return()
         {
-            string returnDate = "01.01.01";
+            DateTime returnDate = new DateTime(2001, 01, 01);
             Date = returnDate;
             return Date;
 
