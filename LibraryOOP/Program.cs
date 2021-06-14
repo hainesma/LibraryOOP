@@ -10,15 +10,10 @@ namespace LibraryOOP
     {
         static void Main(string[] args)
         {
-
             List<Book> bookList = new List<Book>(ReadInBooks());
             Library ourLibrary = new Library(bookList);
-
             ourLibrary.DisplayMenu(bookList);
-
         }
-
-        
 
         public static List<Book> ReadInBooks()
         {
@@ -80,7 +75,7 @@ namespace LibraryOOP
             try
             {
                 input = Console.ReadLine();
-                output = int.Parse(input);
+                output = int.Parse(input) + 1;
                 if (output > maxChoices || output < 1 )
                 {
                     throw new Exception("That number is out of range.");

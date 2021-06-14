@@ -75,7 +75,8 @@ namespace LibraryOOP
             {
                 Console.WriteLine($"{i + 1}: {books[i]}");
             }
-
+            Book selection = books[Program.GetInteger(books.Count)];
+            return selection;
         }
 
         public virtual List<Book> SearchByAuthor()
