@@ -58,14 +58,13 @@ namespace LibraryOOP
                 result.ReturnInfo();
             }
 
-            Book b1 = new Book("title", "author", "status", new DateTime(0001, 01, 01));
+            Book b1 = new Book("title", "author", "status", new DateTime(2021, 6, 01));
 
 
-            b1.DueDate();
+            b1.Return();
 
-            b1.ReturnInfo();
 
-     
+
 
         }
 
