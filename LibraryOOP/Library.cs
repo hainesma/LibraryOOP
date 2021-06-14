@@ -18,11 +18,7 @@ namespace LibraryOOP
             bool goOn = true;
             while (goOn == true)
             {
-<<<<<<< HEAD
 
-=======
-                // Display options
->>>>>>> 8513b446d888d8bdf4674389e6682b129837eeb4
                 Console.WriteLine("Library Menu:");
                 Console.WriteLine("1) Display list of books");
                 Console.WriteLine("2) Search by title");
