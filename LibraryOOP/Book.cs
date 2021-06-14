@@ -34,6 +34,7 @@ namespace LibraryOOP
         {
             DateTime dueDate = DateTime.Now.AddDays(14);
             Date = dueDate;
+            checkStatus();
             return Date;
         }
 
@@ -41,6 +42,7 @@ namespace LibraryOOP
         {
             DateTime returnDate = new DateTime(0001, 01, 01);
             Date = returnDate;
+            checkStatus();
             return Date;
 
         }
@@ -64,6 +66,7 @@ namespace LibraryOOP
 
             return Status;
         }
+
     }
 
 }

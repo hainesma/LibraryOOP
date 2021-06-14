@@ -65,9 +65,7 @@ namespace LibraryOOP
 
             b1.ReturnInfo();
 
-            b1.checkStatus();
-
-            b1.ReturnInfo();
+     
 
         }
 
