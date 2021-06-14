@@ -26,6 +26,7 @@ namespace LibraryOOP
             Console.WriteLine($"Title {Title}");
             Console.WriteLine($"Author {Author}");
             Console.WriteLine($"Status {Status}");
+            Console.WriteLine($"Date: {Date}");
             Console.WriteLine(" ");
         }
 

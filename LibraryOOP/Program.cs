@@ -41,6 +41,7 @@ namespace LibraryOOP
             foreach (Book bookObj in bookList)
             {
                 Console.WriteLine(bookObj.Title);
+
             }
 
             Console.WriteLine();
@@ -56,7 +57,17 @@ namespace LibraryOOP
                 Console.WriteLine(result.Title);
             }
 
-            ourLibrary.DueDue();
+            Book b1 = new Book("title", "author", "status", "01.01.01");
+
+            b1.DueDue();
+
+            b1.ReturnInfo();
+            
+
+            b1.Return();
+
+            b1.ReturnInfo();
+
 
 
         }
