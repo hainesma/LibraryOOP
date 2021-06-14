@@ -21,6 +21,46 @@ namespace LibraryOOP
             Date = date;
         }
 
+
+        public virtual void DisplayBookMenu()
+        {
+            bool goOn = true;
+            while (goOn == true)
+            {
+                // Display options
+                Console.WriteLine($"{Title}");
+                Console.WriteLine("1) Display book info");
+                Console.WriteLine("2) Check out book");
+                Console.WriteLine("3) Return to search results");
+                Console.WriteLine("4) Return to main menu");
+                Console.WriteLine();
+
+                // Get user's selection
+                int choice = Program.GetInteger(4);
+
+                // If statements to route choices
+                if (choice == 1)
+                {
+                    ReturnInfo();
+                }
+                else if (choice == 2)
+                {
+                    Checkout();
+                }
+                else if (choice == 3)
+                {
+                    // Return to search results
+                    goOn = false;
+                }
+                else if (choice == 4)
+                {
+                    // Exit the library
+                    Console.WriteLine("Thank you for visiting the Library!");
+                    goOn = false;
+                }
+            }
+        }
+
         public void ReturnInfo()
         {
             Console.WriteLine($"Title {Title}");
@@ -29,8 +69,6 @@ namespace LibraryOOP
             Console.WriteLine($"Date: {Date}");
             Console.WriteLine(" ");
         }
-
-
 
         public virtual string Checkout()
         {

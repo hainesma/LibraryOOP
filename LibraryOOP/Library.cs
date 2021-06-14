@@ -13,14 +13,12 @@ namespace LibraryOOP
             this.Books = Books;
         }
 
-        public virtual void DisplayMenu(List<Book> bookList)
+        public virtual void DisplayMenu()
         {
             bool goOn = true;
             while (goOn == true)
             {
-
-
-
+                // Display options
                 Console.WriteLine("Library Menu:");
                 Console.WriteLine("1) Display list of books");
                 Console.WriteLine("2) Search by title");
@@ -29,17 +27,16 @@ namespace LibraryOOP
                 Console.WriteLine("5) Exit the library");
                 Console.WriteLine();
 
+                // Get user's selection
                 string input = Console.ReadLine();
                 int choice = int.Parse(input);
 
+                // If statements to route choices
                 if (choice == 1)
                 {
                     Console.WriteLine("This is what we have in our Library!");
                     Console.WriteLine(" ");
-                    foreach (Book bookObj in bookList)
-                    {
-                        Console.WriteLine(bookObj.Title);
-                    }
+                    PickABook(Books).DisplayBookMenu();
                 }
                 else if (choice == 2)
                 {
@@ -70,11 +67,11 @@ namespace LibraryOOP
 
         public virtual Book PickABook(List<Book> books)
         {
-            Console.WriteLine("Please select a book to proceed.");
             for(int i = 0; i < books.Count; i++)
             {
-                Console.WriteLine($"{i + 1}: {books[i]}");
+                Console.WriteLine($"{i + 1}: {books[i].Title}");
             }
+            Console.WriteLine("Please select a book to proceed.");
             Book selection = books[Program.GetInteger(books.Count)];
             return selection;
         }
