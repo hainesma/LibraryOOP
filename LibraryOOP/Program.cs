@@ -34,10 +34,8 @@ namespace LibraryOOP
             }
 
 
-
             Console.WriteLine("This is what we have in our Library!");
             Console.WriteLine(" ");
-            
 
 
             foreach (Book bookObj in bookList)
@@ -49,6 +47,7 @@ namespace LibraryOOP
 
             //Console.WriteLine("Would you like to search for a book");
             //string userInput = Console.ReadLine();
+
             Library ourLibrary = new Library(bookList);
 
             List<Book> searchResults = ourLibrary.SearchByAuthor();
@@ -57,14 +56,17 @@ namespace LibraryOOP
                 Console.WriteLine(result.Title);
             }
 
+            ourLibrary.DueDue();
+
+
         }
 
         public static Book ConvertToBookObj(string line)
         {
             string[] properties = line.Split(',');
-            Book bookObj = new Book("null", "null", "null");
+            Book bookObj = new Book("null", "null", "null", "null");
 
-            if (properties.Length == 3)
+            if (properties.Length == 4)
             {
                 bookObj.Title = properties[0];
                 bookObj.Author = properties[1];
@@ -76,6 +78,8 @@ namespace LibraryOOP
                 return null;
             }
         }
+
+        
 
         public static string BookObjToString(Book bookobj)
         {
