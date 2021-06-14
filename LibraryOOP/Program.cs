@@ -32,30 +32,36 @@ namespace LibraryOOP
                     bookList.Add(book);
                 }
             }
-            
+
 
 
             Console.WriteLine("This is what we have in our Library!");
             Console.WriteLine(" ");
+
 
             foreach (Book bookObj in bookList)
             {
                 Console.WriteLine(bookObj.Title);
             }
 
+            Console.WriteLine();
+
             //Console.WriteLine("Would you like to search for a book");
             //string userInput = Console.ReadLine();
             Library ourLibrary = new Library(bookList);
 
-            ourLibrary.SearchByAuthor(bookList);
-            ourLibrary.SearchByATitle(bookList);
+            List<Book> searchResults = ourLibrary.SearchByAuthor();
+            foreach (Book result in searchResults)
+            {
+                Console.WriteLine(result.Title);
+            }
 
         }
 
         public static Book ConvertToBookObj(string line)
         {
             string[] properties = line.Split(',');
-            Book bookObj = new Book("null","null", "null");
+            Book bookObj = new Book("null", "null", "null");
 
             if (properties.Length == 3)
             {

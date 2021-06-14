@@ -12,20 +12,20 @@ namespace LibraryOOP
         {
             this.Books = Books;
         }
-        
 
 
-        public virtual void SearchByAuthor(List<Book> Books)
+
+        public virtual List<Book> SearchByAuthor()
         {
             string userInput;
             Console.Write("Which Author would you like to search for?: ");
             userInput = Console.ReadLine().Trim().ToLower();
-
+            List<Book> authorMatch = new List<Book>();
             for (int i = 0; i < Books.Count; i++)
             {
-                List<Book> authorMatch = new List<Book>();
 
-                if (Books[i].Author.ToLower().Trim().Contains(userInput))
+
+                if (Books[i].Author.ToLower().Contains(userInput))
                 {
                     authorMatch.Add(Books[i]);
                 }
@@ -33,24 +33,22 @@ namespace LibraryOOP
                 {
                     continue;
                 }
-                foreach (Book bookObj in authorMatch)
-                {
-                    Console.WriteLine(bookObj.Title);
-                }
             }
+            return authorMatch;
         }
 
-        public virtual void SearchByATitle(List<Book> Books)
+
+        public virtual List<Book> SearchByTitle()
         {
             string userInput;
-            Console.Write("What Book would you like to search for?: ");
+            Console.Write("Which Title would you like to search for?: ");
             userInput = Console.ReadLine().Trim().ToLower();
             List<Book> titleMatch = new List<Book>();
-
             for (int i = 0; i < Books.Count; i++)
             {
-            
-                if (Books[i].Title.ToLower().Trim().Contains(userInput))
+
+
+                if (Books[i].Title.ToLower().Contains(userInput))
                 {
                     titleMatch.Add(Books[i]);
                 }
@@ -59,22 +57,9 @@ namespace LibraryOOP
                     continue;
                 }
 
-         
             }
-            if (titleMatch.Count > 1)
-            {
-                foreach (Book bookObj in titleMatch)
-
-                { Console.WriteLine(bookObj.Title); }
-
-            }
-            else
-            {
-                Console.WriteLine("sorry, no match");
-            }
+            return titleMatch;
         }
-
-
     }
-        
+
 }
