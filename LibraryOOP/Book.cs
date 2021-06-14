@@ -42,10 +42,12 @@ namespace LibraryOOP
                 if (choice == 1)
                 {
                     ReturnInfo();
+                    Console.WriteLine();
+                    Console.WriteLine("What would you like to do now?");
                 }
                 else if (choice == 2)
                 {
-                    Checkout();
+                    Console.WriteLine(Checkout());
                 }
                 else if (choice == 3)
                 {

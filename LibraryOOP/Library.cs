@@ -28,10 +28,9 @@ namespace LibraryOOP
                 Console.WriteLine();
 
                 // Get user's selection
-                string input = Console.ReadLine();
-                int choice = int.Parse(input);
+                int choice = Program.GetInteger(5);
 
-                // If statements to route choices
+
                 if (choice == 1)
                 {
                     Console.WriteLine("This is what we have in our Library!");
@@ -72,7 +71,7 @@ namespace LibraryOOP
                 Console.WriteLine($"{i + 1}: {books[i].Title}");
             }
             Console.WriteLine("Please select a book to proceed.");
-            Book selection = books[Program.GetInteger(books.Count)];
+            Book selection = books[Program.GetInteger(books.Count) - 1];
             return selection;
         }
 
