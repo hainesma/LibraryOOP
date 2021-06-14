@@ -33,6 +33,7 @@ namespace LibraryOOP
 
                 if (choice == 1)
                 {
+                    Console.Clear();
                     Console.WriteLine("This is what we have in our Library!");
                     Console.WriteLine(" ");
                     PickABook(Books).DisplayBookMenu();
@@ -58,6 +59,7 @@ namespace LibraryOOP
                 else if (choice == 5)
                 {
                     // Exit the library
+                    Console.Clear();
                     Console.WriteLine("Thank you for visiting the Library!");
                     goOn = false;
                 }
