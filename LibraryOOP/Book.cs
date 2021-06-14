@@ -26,11 +26,12 @@ namespace LibraryOOP
 
         public virtual void DisplayBookMenu()
         {
+            Console.Clear();
             bool goOn = true;
             while (goOn == true)
             {
                 // Display options
-                Console.WriteLine($"{Title}");
+                Console.WriteLine($"Book Menu: {Title}");
                 Console.WriteLine("1) Display book info");
                 Console.WriteLine("2) Check out book");
                 Console.WriteLine("3) Return to main menu");
@@ -42,17 +43,19 @@ namespace LibraryOOP
                 // If statements to route choices
                 if (choice == 1)
                 {
+                    Console.Clear();
                     ReturnInfo();
                     Console.WriteLine();
-                    Console.WriteLine("What would you like to do now?");
                 }
                 else if (choice == 2)
                 {
+                    Console.Clear();
                     Console.WriteLine(Checkout());
                 }
                 else if (choice == 3)
                 {
                     // Return to main menu
+                    Console.Clear();
                     goOn = false;
                 }
                 
@@ -61,6 +64,8 @@ namespace LibraryOOP
 
         public void ReturnInfo()
         {
+
+            Console.Clear();
             Console.ForegroundColor = ConsoleColor.Cyan;
             
             Console.WriteLine("Information on "+ Title);
