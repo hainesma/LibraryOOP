@@ -48,6 +48,7 @@ namespace LibraryOOP
             Library ourLibrary = new Library(bookList);
 
             ourLibrary.SearchByAuthor(bookList);
+            ourLibrary.SearchByATitle(bookList);
 
         }
 
