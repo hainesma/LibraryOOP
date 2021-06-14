@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace LibraryOOP
@@ -34,10 +35,8 @@ namespace LibraryOOP
                 if (choice == 1)
                 {
                     Console.Clear();
-                    Console.WriteLine("This is what we have in our Library!");
-                    Console.WriteLine(" ");
 
-                    PickABook(Books).DisplayBookMenu();
+                    PickABook(Books, "This is what we have in our Library!").DisplayBookMenu();
 
                 }
                 else if (choice == 2)
@@ -48,7 +47,7 @@ namespace LibraryOOP
                     {
                         Console.WriteLine(result.Title);
                     }
-
+                    PickABook(searchResults, "Here is a list of search results by title:").DisplayBookMenu();
                 }
                 else if (choice == 3)
                 {
@@ -71,10 +70,11 @@ namespace LibraryOOP
                     {
                         Book selection = searchResults[0];
                     }
+                    PickABook(searchResults, "Here is a list of search results by author:").DisplayBookMenu();
                 }
                 else if (choice == 4)
                 {
-                    
+                    DisplayReturnMenu();
                 }
                 else if (choice == 5)
                 {
@@ -86,8 +86,21 @@ namespace LibraryOOP
             }
         }
 
-        public virtual Book PickABook(List<Book> books)
+        public virtual void DisplayReturnMenu()
         {
+            // Display a list of books that are checked out
+            // Use a lambda expression to select Book objects with status "Checked Out"
+            List<Book> checkedOut = Books.Where(book => book.Status == "CheckedOut").ToList();
+            Book selection = PickABook(checkedOut, "Here is a list of books that are checked out:");
+            DateTime outputDate = selection.Return();
+            Console.WriteLine(outputDate);
+            
+
+        }
+        
+        public virtual Book PickABook(List<Book> books, string message)
+        {
+            Console.WriteLine(message);
             for(int i = 0; i < books.Count; i++)
             {
                 Console.WriteLine($"{i + 1}: {books[i].Title}");
