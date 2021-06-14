@@ -32,12 +32,13 @@ namespace LibraryOOP
                     bookList.Add(book);
                 }
             }
-            
+
 
 
             Console.WriteLine("This is what we have in our Library!");
             Console.WriteLine(" ");
             
+
 
             foreach (Book bookObj in bookList)
             {
@@ -61,7 +62,7 @@ namespace LibraryOOP
         public static Book ConvertToBookObj(string line)
         {
             string[] properties = line.Split(',');
-            Book bookObj = new Book("null","null", "null");
+            Book bookObj = new Book("null", "null", "null");
 
             if (properties.Length == 3)
             {

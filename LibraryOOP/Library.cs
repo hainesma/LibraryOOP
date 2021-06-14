@@ -12,7 +12,7 @@ namespace LibraryOOP
         {
             this.Books = Books;
         }
-        
+
 
 
         public virtual List<Book> SearchByAuthor()
@@ -23,7 +23,7 @@ namespace LibraryOOP
             List<Book> authorMatch = new List<Book>();
             for (int i = 0; i < Books.Count; i++)
             {
-                
+
 
                 if (Books[i].Author.ToLower().Contains(userInput))
                 {
@@ -36,7 +36,7 @@ namespace LibraryOOP
             }
             return authorMatch;
         }
-        
+
 
         public virtual List<Book> SearchByTitle()
         {
@@ -46,7 +46,7 @@ namespace LibraryOOP
             List<Book> titleMatch = new List<Book>();
             for (int i = 0; i < Books.Count; i++)
             {
-                
+
 
                 if (Books[i].Title.ToLower().Contains(userInput))
                 {
@@ -56,10 +56,10 @@ namespace LibraryOOP
                 {
                     continue;
                 }
-                
+
             }
             return titleMatch;
         }
     }
-        
+
 }

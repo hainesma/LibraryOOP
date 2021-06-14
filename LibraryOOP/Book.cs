@@ -1,10 +1,11 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace LibraryOOP
 {
-    
+
     class Book
     {
         public string Title { get; set; }
@@ -27,6 +28,5 @@ namespace LibraryOOP
         }
 
     }
-
 
 }
