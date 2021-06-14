@@ -14,11 +14,7 @@ namespace LibraryOOP
             List<Book> bookList = new List<Book>(ReadInBooks());
             Library ourLibrary = new Library(bookList);
 
-            List<Book> searchResults = ourLibrary.SearchByAuthor();
-            foreach (Book result in searchResults)
-            {
-                Console.WriteLine(result.Title);
-            }
+            ourLibrary.DisplayMenu(bookList);
 
         }
 
