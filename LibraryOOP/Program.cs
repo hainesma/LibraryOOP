@@ -58,6 +58,17 @@ namespace LibraryOOP
                 result.ReturnInfo();
             }
 
+            Book b1 = new Book("title", "author", "status", new DateTime(0001, 01, 01));
+
+
+            b1.DueDate();
+
+            b1.ReturnInfo();
+
+            b1.checkStatus();
+
+            b1.ReturnInfo();
+
         }
 
         public static Book ConvertToBookObj(string line)

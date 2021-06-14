@@ -30,7 +30,7 @@ namespace LibraryOOP
             Console.WriteLine(" ");
         }
 
-        public virtual DateTime DueDue()
+        public virtual DateTime DueDate()
         {
             DateTime dueDate = DateTime.Now.AddDays(14);
             Date = dueDate;
@@ -39,12 +39,31 @@ namespace LibraryOOP
 
         public virtual DateTime Return()
         {
-            DateTime returnDate = new DateTime(2001, 01, 01);
+            DateTime returnDate = new DateTime(0001, 01, 01);
             Date = returnDate;
             return Date;
 
         }
 
+        public virtual string checkStatus()
+        {
+            DateTime current = DateTime.Now;
+            DateTime returnDate = new DateTime(0001, 01, 01);
+            if (Date > current)
+            {
+                Status = $"Checked out, It should be return by {Date}";
+            }
+            else if (Date < current && Date != returnDate)
+            {
+                Status = "Overdue!";
+            }
+            else
+            {
+                Status = "OnShelf";
+            }
+
+            return Status;
+        }
     }
 
 }
