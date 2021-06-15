@@ -134,8 +134,7 @@ namespace LibraryOOP
             }
             if (authorMatch.Count < 1)
             {
-                SearchByAuthor();
-                return authorMatch;
+                return SearchByAuthor();
             }
             return authorMatch;
         }
@@ -149,17 +148,14 @@ namespace LibraryOOP
             List<Book> titleMatch = new List<Book>();
             for (int i = 0; i < Books.Count; i++)
             {
-
-
                 if (Books[i].Title.ToLower().Contains(userInput))
                 {
                     titleMatch.Add(Books[i]);
                 }
-                else
+                if (titleMatch.Count < 1)
                 {
-                    continue;
+                    return SearchByTitle();
                 }
-
             }
             return titleMatch;
         }
