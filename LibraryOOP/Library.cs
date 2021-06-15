@@ -184,7 +184,7 @@ namespace LibraryOOP
                 string author = books[i].Author;
                 string status = books[i].Status;
                 DateTime dueDate = books[i].Date;
-                booksData += $"{title} + {author} + {status} + {dueDate} + \n";
+                booksData += $"{title}, {author}, {status}, {dueDate} \n";
 
             }
 
