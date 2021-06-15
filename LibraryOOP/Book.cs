@@ -109,6 +109,7 @@ namespace LibraryOOP
 
         public virtual DateTime Return()
         {
+            Console.Clear();
             CheckStatus();
             if (Status == "CheckedOut")
             {
