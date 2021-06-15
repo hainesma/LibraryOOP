@@ -44,20 +44,12 @@ namespace LibraryOOP
                 {
                     // Search by author
                     List<Book> searchResults = SearchByAuthor();
-                    foreach (Book result in searchResults)
-                    {
-                        Console.WriteLine(result.Title);
-                    }
                     PickABook(searchResults, "Here is a list of search results by title:").DisplayBookMenu();
                 }
                 else if (choice == 3)
                 {
                     // Search by title
                     List<Book> searchResults = SearchByTitle();
-                    foreach (Book result in searchResults)
-                    {
-                        Console.WriteLine(result.Title);
-                    }
                     if (searchResults.Count > 0)
                     {
                         Console.WriteLine("Please select a book to proceed.");
@@ -117,12 +109,13 @@ namespace LibraryOOP
         public virtual Book PickABook(List<Book> books, string message)
         {
             Console.WriteLine(message);
+            Book selection = new Book("null", "null", "null", new DateTime(01, 01, 01));
             for(int i = 0; i < books.Count; i++)
             {
                 Console.WriteLine($"{i + 1}: {books[i].Title}");
             }
             Console.WriteLine("Please select a book to proceed.");
-            Book selection = books[Program.GetInteger(books.Count) - 1];
+            selection = books[Program.GetInteger(books.Count) - 1];
             return selection;
         }
 
@@ -134,16 +127,15 @@ namespace LibraryOOP
             List<Book> authorMatch = new List<Book>();
             for (int i = 0; i < Books.Count; i++)
             {
-
-
                 if (Books[i].Author.ToLower().Contains(userInput))
                 {
                     authorMatch.Add(Books[i]);
                 }
-                else
-                {
-                    continue;
-                }
+            }
+            if (authorMatch.Count < 1)
+            {
+                SearchByAuthor();
+                return authorMatch;
             }
             return authorMatch;
         }

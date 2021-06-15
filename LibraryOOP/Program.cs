@@ -82,10 +82,12 @@ namespace LibraryOOP
             catch (FormatException)
             {
                 Console.WriteLine("That was not a valid input.");
+                output = GetInteger(maxChoices);
             }
             catch (Exception e)
             {
                 Console.WriteLine(e.Message);
+                output = GetInteger(maxChoices);
             }
             return output;
         }
