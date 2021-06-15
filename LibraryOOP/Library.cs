@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 
@@ -77,6 +78,7 @@ namespace LibraryOOP
                 {
                     // Exit the library
                     Console.Clear();
+                    AddData(Books);
                     Console.WriteLine("Thank you for visiting the Library!");
                     goOn = false;
                 }
@@ -170,7 +172,29 @@ namespace LibraryOOP
             return titleMatch;
         }
 
- 
+        public static void AddData(List<Book> books)
+        {
+            string filePath = @"../../../Books.txt";
+            StreamWriter writer = new StreamWriter(filePath);
+            string booksData = "";
+
+            for (int i = 0; i < books.Count; i++)
+            {
+                string title = books[i].Title;
+                string author = books[i].Author;
+                string status = books[i].Status;
+                DateTime dueDate = books[i].Date;
+                booksData += $"{title} + {author} + {status} + {dueDate} + \n";
+
+            }
+
+            // Have to get the library into a string 
+            writer.Write(booksData);
+            writer.Close();
+
+        }
+
+
     }
 
 }
