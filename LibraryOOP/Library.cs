@@ -26,7 +26,7 @@ namespace LibraryOOP
                 Console.WriteLine("2) Search by author");
                 Console.WriteLine("3) Search by title");
                 Console.WriteLine("4) Return books");
-                Console.WriteLine("5) Julius Caeser");
+                Console.WriteLine("5) Julius Caesar");
                 Console.WriteLine("6) Exit the library");
                 Console.WriteLine();
 
