@@ -123,7 +123,7 @@ namespace LibraryOOP
                 output = int.Parse(input);
                 if (output > maxChoices|| output < 1 )
                 {
-                    throw new Exception("That number is out of range.");
+                    throw new Exception("That number is out of range. Try again.");
                 }
             }
             catch (FormatException)

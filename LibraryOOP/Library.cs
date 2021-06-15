@@ -46,14 +46,14 @@ namespace LibraryOOP
                     // Search by author
                     Console.Clear();
                     List<Book> searchResults = SearchByAuthor();
-                    PickABook(searchResults, "Here is a list of search results by title:").DisplayBookMenu();
+                    PickABook(searchResults, "Here is a list of search results by author:").DisplayBookMenu();
                 }
                 else if (choice == 3)
                 {
                     // Search by title
                     Console.Clear();
                     List<Book> searchResults = SearchByTitle();
-                    PickABook(searchResults, "Here is a list of search results by author:").DisplayBookMenu();
+                    PickABook(searchResults, "Here is a list of search results by title:").DisplayBookMenu();
                 }
                 else if (choice == 4)
                 {
