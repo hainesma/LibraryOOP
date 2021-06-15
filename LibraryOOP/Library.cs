@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Text;
 
 namespace LibraryOOP
@@ -35,10 +36,8 @@ namespace LibraryOOP
                 if (choice == 1)
                 {
                     Console.Clear();
-                    Console.WriteLine("This is what we have in our Library!");
-                    Console.WriteLine(" ");
 
-                    PickABook(Books).DisplayBookMenu();
+                    PickABook(Books, "This is what we have in our Library!").DisplayBookMenu();
 
                 }
                 else if (choice == 2)
@@ -49,7 +48,7 @@ namespace LibraryOOP
                     {
                         Console.WriteLine(result.Title);
                     }
-
+                    PickABook(searchResults, "Here is a list of search results by title:").DisplayBookMenu();
                 }
                 else if (choice == 3)
                 {
@@ -59,7 +58,7 @@ namespace LibraryOOP
                     {
                         Console.WriteLine(result.Title);
                     }
-                    if (searchResults.Count > 1)
+                    if (searchResults.Count > 0)
                     {
                         Console.WriteLine("Please select a book to proceed.");
                         for (int i = 0; i < searchResults.Count; i++)
@@ -68,14 +67,12 @@ namespace LibraryOOP
                         }
                         Book selection = searchResults[Program.GetInteger(searchResults.Count)];
                     }
-                    else
-                    {
-                        Book selection = searchResults[0];
-                    }
+                    PickABook(searchResults, "Here is a list of search results by author:").DisplayBookMenu();
                 }
                 else if (choice == 4)
                 {
-                    
+                    Console.Clear();
+                    DisplayReturnMenu();
                 }
                 else if (choice == 5)
                 {
@@ -88,8 +85,38 @@ namespace LibraryOOP
             }
         }
 
-        public virtual Book PickABook(List<Book> books)
+        public virtual void DisplayReturnMenu()
         {
+            bool goOn = true;
+            while (goOn == true)
+            {
+
+
+                // Display a list of books that are checked out
+                // Use a lambda expression to select Book objects with status "Checked Out"
+                List<Book> checkedOut = Books.Where(book => book.CheckStatus() == "CheckedOut").ToList();
+                //Console.WriteLine($"Test: ");
+                //foreach(Book checkedOutBook in checkedOut)
+                //{
+                //    Console.WriteLine($"{checkedOutBook.Title}");
+                //}
+                Book selection = PickABook(checkedOut, "Here is a list of books that are checked out:");
+                DateTime outputDate = selection.Return();
+                Console.WriteLine(outputDate);
+                Console.WriteLine();
+                Console.WriteLine("Return to main menu: Press Enter");
+                string input = Console.ReadLine();
+                if (input == "")
+                {
+                    Console.Clear();
+                    goOn = false;
+                }
+            }
+        }
+        
+        public virtual Book PickABook(List<Book> books, string message)
+        {
+            Console.WriteLine(message);
             for(int i = 0; i < books.Count; i++)
             {
                 Console.WriteLine($"{i + 1}: {books[i].Title}");
