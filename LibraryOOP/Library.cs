@@ -135,6 +135,7 @@ namespace LibraryOOP
             if (authorMatch.Count < 1)
             {
                 SearchByAuthor();
+                return authorMatch;
             }
             return authorMatch;
         }
