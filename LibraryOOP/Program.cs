@@ -49,9 +49,9 @@ namespace LibraryOOP
 
             if (properties.Length == 4)
             {
-                bookObj.Title = properties[0];
-                bookObj.Author = properties[1];
-                bookObj.Status = properties[2];
+                bookObj.Title = properties[0].Trim();
+                bookObj.Author = properties[1].Trim();
+                bookObj.Status = properties[2].Trim();
                 return bookObj;
             }
             else
