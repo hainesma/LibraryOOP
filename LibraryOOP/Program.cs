@@ -48,9 +48,9 @@ namespace LibraryOOP
             Book bookObj = new Book("null", "null", "null", new DateTime (01,01,01));
             if (properties.Length == 4)
             {
-                bookObj.Title = properties[0];
-                bookObj.Author = properties[1];
-                bookObj.Status = properties[2];
+                bookObj.Title = properties[0].Trim(); ;
+                bookObj.Author = properties[1].Trim();
+                bookObj.Status = properties[2].Trim();
                 bookObj.Date = DateTime.Parse(properties[3]);
                 return bookObj;
             }
