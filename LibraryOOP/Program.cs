@@ -13,7 +13,6 @@ namespace LibraryOOP
             List<Book> bookList = new List<Book>(ReadInBooks());
             Library ourLibrary = new Library(bookList);
             ourLibrary.DisplayMenu();
-
         }
 
         public static List<Book> ReadInBooks()
@@ -23,6 +22,7 @@ namespace LibraryOOP
             // pulling in the info from student.txt document
             StreamReader reader = new StreamReader(filePath);
             string output = reader.ReadToEnd();
+            reader.Close();
 
             // splitting each line and putting them in a list
             string[] lines = output.Split('\n');
@@ -60,9 +60,6 @@ namespace LibraryOOP
             }
         }
 
-
-        
-
         public static string BookObjToString(Book bookobj)
         {
             string output = $"{bookobj.Title}, {bookobj.Author}, {bookobj.Status} \n";
@@ -92,5 +89,7 @@ namespace LibraryOOP
             }
             return output;
         }
+
+        
     }
 }
