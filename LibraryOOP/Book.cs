@@ -125,6 +125,7 @@ namespace LibraryOOP
                 Console.BackgroundColor = ConsoleColor.Red;
                 Console.WriteLine($"The book that you are returning is overdue by {diffNum} days!");
                 double fines = diffNum * 5;
+                Console.WriteLine($"Your fine is ${fines}");
                 DateTime returnDate = new DateTime(0001, 01, 01);
                 Date = returnDate;
                 CheckStatus();

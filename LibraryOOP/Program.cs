@@ -5,7 +5,6 @@ using System.Text;
 
 namespace LibraryOOP
 
-// to update your branch to main 'git rebase main'
 {
     class Program
     {

@@ -62,6 +62,7 @@ namespace LibraryOOP
                 }
                 else if (choice == 5)
                 {
+                    // Julius Caesar burns down the library
                     DeleteData();
                     goOn = false;
 
