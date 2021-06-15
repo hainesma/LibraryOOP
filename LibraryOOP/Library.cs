@@ -23,8 +23,8 @@ namespace LibraryOOP
 
                 Console.WriteLine("Library Menu:");
                 Console.WriteLine("1) Display list of books");
-                Console.WriteLine("2) Search by title");
-                Console.WriteLine("3) Search by author");
+                Console.WriteLine("2) Search by author");
+                Console.WriteLine("3) Search by title");
                 Console.WriteLine("4) Return books");
                 Console.WriteLine("5) Exit the library");
                 Console.WriteLine();
