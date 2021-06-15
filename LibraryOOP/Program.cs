@@ -53,18 +53,18 @@ namespace LibraryOOP
 
                 using (StreamWriter writer = File.CreateText(filePath))
                 {
-                    writer.WriteLine("The Vanishing Half,     Brit Bennett,  OnShelf, 1/1/0001 12:00:00 AM ");
-                    writer.WriteLine("Caste: The origins of Our Discontents,     Isabel Wikerson,  OnShelf, 1/1/0001 12:00:00 AM ");
-                    writer.WriteLine("Deacon King Kong,    James McBride,  OnShelf, 1/1/0001 12:00:00 AM");
-                    writer.WriteLine("Hamnet,          Maggie O Farrell, CheckedOut, 6/29/2021 10:02:15 AM ");
-                    writer.WriteLine("Leave The World Behind,          RuMaan Alam,  OnShelf, 1/1/0001 12:00:00 AM ");
-                    writer.WriteLine("The Glass Hotel,          Emily St. John Mandel,  OnShelf, 1/1/0001 12:00:00 AM ");
-                    writer.WriteLine("Uncanny Vall,          Anna Wiener,  OnShelf, 1/1/0001 12:00:00 AM ");
-                    writer.WriteLine("Homeland Elegies,          Ayad Akhtar,  OnShelf, 1/1/0001 12:00:00 AM ");
-                    writer.WriteLine("Weather,          Jenny Offill,  OnShelf, 1/1/0001 12:00:00 AM ");
-                    writer.WriteLine("The Mirror and The Light,           Hilary Mantel,  OnShelf, 1/1/0001 12:00:00 AM ");
-                    writer.WriteLine("Real Life,          Brandon Taylor,  OnShelf, 1/1/0001 12:00:00 AM ");
-                    writer.WriteLine("A Promised Land,          Barack Obama,  OnShelf, 1/1/0001 12:00:00 AM ");
+                    writer.WriteLine("The Vanishing Half, Brit Bennett, OnShelf, 1/1/0001 12:00:00 AM ");
+                    writer.WriteLine("Caste: The origins of Our Discontents, Isabel Wikerson, OnShelf, 1/1/0001 12:00:00 AM ");
+                    writer.WriteLine("Deacon King Kong, James McBride, OnShelf, 1/1/0001 12:00:00 AM");
+                    writer.WriteLine("Hamnet, Maggie O Farrell, CheckedOut, 6/29/2021 10:02:15 AM ");
+                    writer.WriteLine("Leave The World Behind, RuMaan Alam, OnShelf, 1/1/0001 12:00:00 AM ");
+                    writer.WriteLine("The Glass Hotel, Emily St. John Mandel, OnShelf, 1/1/0001 12:00:00 AM ");
+                    writer.WriteLine("Uncanny Vall, Anna Wiener, OnShelf, 1/1/0001 12:00:00 AM ");
+                    writer.WriteLine("Homeland Elegies, Ayad Akhtar, OnShelf, 1/1/0001 12:00:00 AM ");
+                    writer.WriteLine("Weather, Jenny Offill, OnShelf, 1/1/0001 12:00:00 AM ");
+                    writer.WriteLine("The Mirror and The Light, Hilary Mantel, OnShelf, 1/1/0001 12:00:00 AM ");
+                    writer.WriteLine("Real Life, Brandon Taylor, OnShelf, 1/1/0001 12:00:00 AM ");
+                    writer.WriteLine("A Promised Land, Barack Obama, OnShelf, 1/1/0001 12:00:00 AM ");
 
                 }
                 StreamReader reader = new StreamReader(filePath);
