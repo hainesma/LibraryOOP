@@ -85,6 +85,7 @@ namespace LibraryOOP
             {
                 Date = DueDate();
                 checkingOut = $"You have checked out {Title}, Please Return it by {Date}.";
+                CheckStatus();
 
             }
             else if (Status == "CheckedOut")
@@ -115,7 +116,8 @@ namespace LibraryOOP
             {
                 Console.WriteLine("Thank you for returning your book");
                 DateTime returnDate = new DateTime(0001, 01, 01);
-                Date = returnDate; 
+                Date = returnDate;
+                CheckStatus();
             }
             else if (Status == "Overdue!")
             {
@@ -127,6 +129,7 @@ namespace LibraryOOP
                 double fines = diffNum * 5;
                 DateTime returnDate = new DateTime(0001, 01, 01);
                 Date = returnDate;
+                CheckStatus();
 
             }
 

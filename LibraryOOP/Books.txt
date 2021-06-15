@@ -1,12 +1,12 @@
-The Vanishing Half,   Brit Bennett,   OnShelf, 1/1/0001 12:00:00 AM 
-Caste: The origins of Our Discontents,    Isabel Wikerson, OnShelf, 6/29/2021 9:23:57 AM 
-Deacon King Kong,   James McBride,    OnShelf, 1/1/0001 12:00:00 AM 
-Hamnet,   Maggie O Farrell,   OnShelf, 1/1/0001 12:00:00 AM 
-Leave The World Behind,   RuMaan Alam,    OnShelf, 1/1/0001 12:00:00 AM 
-The Glass Hotel,   Emily St. John Mandel,   OnShelf, 1/1/0001 12:00:00 AM 
-Uncanny Vall,   Anna Wiener,    OnShelf, 1/1/0001 12:00:00 AM 
-Homeland Elegies,   Ayad Akhtar,   OnShelf, 1/1/0001 12:00:00 AM 
-Weather,   Jenny Offill,   OnShelf, 1/1/0001 12:00:00 AM 
-The Mirror and The Light,    Hilary Mantel,   OnShelf, 1/1/0001 12:00:00 AM 
-Real Life,   Brandon Taylor,    OnShelf, 1/1/0001 12:00:00 AM 
-A Promised Land,   Barack Obama,  OnShelf, 1/1/0001 12:00:00 AM 
+The Vanishing Half,     Brit Bennett,  OnShelf, 1/1/0001 12:00:00 AM 
+Caste: The origins of Our Discontents,     Isabel Wikerson,  OnShelf, 1/1/0001 12:00:00 AM 
+Deacon King Kong,    James McBride,  OnShelf, 1/1/0001 12:00:00 AM 
+Hamnet,          Maggie O Farrell, CheckedOut, 6/29/2021 10:02:15 AM 
+Leave The World Behind,          RuMaan Alam,  OnShelf, 1/1/0001 12:00:00 AM 
+The Glass Hotel,          Emily St. John Mandel,  OnShelf, 1/1/0001 12:00:00 AM 
+Uncanny Vall,          Anna Wiener,  OnShelf, 1/1/0001 12:00:00 AM 
+Homeland Elegies,          Ayad Akhtar,  OnShelf, 1/1/0001 12:00:00 AM 
+Weather,          Jenny Offill,  OnShelf, 1/1/0001 12:00:00 AM 
+The Mirror and The Light,           Hilary Mantel,  OnShelf, 1/1/0001 12:00:00 AM 
+Real Life,          Brandon Taylor,  OnShelf, 1/1/0001 12:00:00 AM 
+A Promised Land,          Barack Obama,  OnShelf, 1/1/0001 12:00:00 AM 

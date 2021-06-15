@@ -45,13 +45,13 @@ namespace LibraryOOP
         public static Book ConvertToBookObj(string line)
         {
             string[] properties = line.Split(',');
-            Book bookObj = new Book("null", "null", "null", new DateTime(01, 01, 01));
-
+            Book bookObj = new Book("null", "null", "null", new DateTime (01,01,01));
             if (properties.Length == 4)
             {
                 bookObj.Title = properties[0];
                 bookObj.Author = properties[1];
                 bookObj.Status = properties[2];
+                bookObj.Date = DateTime.Parse(properties[3]);
                 return bookObj;
             }
             else

@@ -96,10 +96,10 @@ namespace LibraryOOP
                 // Use a lambda expression to select Book objects with status "Checked Out"
                 List<Book> checkedOut = Books.Where(book => book.CheckStatus() == "CheckedOut").ToList();
                 //Console.WriteLine($"Test: ");
-                //foreach(Book checkedOutBook in checkedOut)
-                //{
-                //    Console.WriteLine($"{checkedOutBook.Title}");
-                //}
+                foreach (Book checkedOutBook in checkedOut)
+                {
+                    Console.WriteLine($"{checkedOutBook.Title}");
+                }
                 Book selection = PickABook(checkedOut, "Here is a list of books that are checked out:");
                 DateTime outputDate = selection.Return();
                 Console.WriteLine(outputDate);
