@@ -11,8 +11,8 @@ namespace LibraryOOP
     {
         static void Main(string[] args)
         {
-            List<Book> bookList = new List<Book>(ReadInBooks());
-            Library ourLibrary = new Library(bookList);
+            // List<Book> bookList = new List<Book>(ReadInBooks());
+            Library ourLibrary = new Library(new List<Book>(ReadInBooks()));
             ourLibrary.DisplayMenu();
         }
 
