@@ -44,20 +44,12 @@ namespace LibraryOOP
                 {
                     // Search by author
                     List<Book> searchResults = SearchByAuthor();
-                    foreach (Book result in searchResults)
-                    {
-                        Console.WriteLine(result.Title);
-                    }
                     PickABook(searchResults, "Here is a list of search results by title:").DisplayBookMenu();
                 }
                 else if (choice == 3)
                 {
                     // Search by title
                     List<Book> searchResults = SearchByTitle();
-                    foreach (Book result in searchResults)
-                    {
-                        Console.WriteLine(result.Title);
-                    }
                     if (searchResults.Count > 0)
                     {
                         Console.WriteLine("Please select a book to proceed.");
@@ -135,16 +127,14 @@ namespace LibraryOOP
             List<Book> authorMatch = new List<Book>();
             for (int i = 0; i < Books.Count; i++)
             {
-
-
                 if (Books[i].Author.ToLower().Contains(userInput))
                 {
                     authorMatch.Add(Books[i]);
                 }
-                else
-                {
-                    continue;
-                }
+            }
+            if (authorMatch.Count < 1)
+            {
+                SearchByAuthor();
             }
             return authorMatch;
         }
