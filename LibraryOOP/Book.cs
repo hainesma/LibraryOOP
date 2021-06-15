@@ -66,9 +66,7 @@ namespace LibraryOOP
         {
 
             Console.Clear();
-            
             Console.ForegroundColor = ConsoleColor.Cyan;
-            
             Console.WriteLine("Information on "+ Title);
             Console.WriteLine("----------------------------------------------------------------------------");
             Console.WriteLine("Title  \t\t\t\t Author \t\t\t\t Status");

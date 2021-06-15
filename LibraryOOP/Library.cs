@@ -44,22 +44,15 @@ namespace LibraryOOP
                 else if (choice == 2)
                 {
                     // Search by author
+                    Console.Clear();
                     List<Book> searchResults = SearchByAuthor();
                     PickABook(searchResults, "Here is a list of search results by title:").DisplayBookMenu();
                 }
                 else if (choice == 3)
                 {
                     // Search by title
+                    Console.Clear();
                     List<Book> searchResults = SearchByTitle();
-                    if (searchResults.Count > 0)
-                    {
-                        Console.WriteLine("Please select a book to proceed.");
-                        for (int i = 0; i < searchResults.Count; i++)
-                        {
-                            Console.WriteLine($"{i + 1}: {searchResults[i]}");
-                        }
-                        Book selection = searchResults[Program.GetInteger(searchResults.Count)];
-                    }
                     PickABook(searchResults, "Here is a list of search results by author:").DisplayBookMenu();
                 }
                 else if (choice == 4)
@@ -149,6 +142,8 @@ namespace LibraryOOP
             }
             if (authorMatch.Count < 1)
             {
+                Console.Clear();
+                Console.WriteLine("That search returned 0 results.");
                 return SearchByAuthor();
             }
             return authorMatch;
@@ -166,10 +161,12 @@ namespace LibraryOOP
                 {
                     titleMatch.Add(Books[i]);
                 }
-                if (titleMatch.Count < 1)
-                {
-                    return SearchByTitle();
-                }
+            }
+            if (titleMatch.Count < 1)
+            {
+                Console.Clear();
+                Console.WriteLine("That search returned 0 results.");
+                return SearchByTitle();
             }
             return titleMatch;
         }
