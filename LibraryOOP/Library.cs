@@ -26,11 +26,12 @@ namespace LibraryOOP
                 Console.WriteLine("2) Search by author");
                 Console.WriteLine("3) Search by title");
                 Console.WriteLine("4) Return books");
-                Console.WriteLine("5) Exit the library");
+                Console.WriteLine("5) Julius Caeser");
+                Console.WriteLine("6) Exit the library");
                 Console.WriteLine();
 
                 // Get user's selection
-                int choice = Program.GetInteger(5);
+                int choice = Program.GetInteger(6);
 
 
                 if (choice == 1)
@@ -75,6 +76,12 @@ namespace LibraryOOP
                     DisplayReturnMenu();
                 }
                 else if (choice == 5)
+                {
+                    DeleteData();
+                    goOn = false;
+
+                }
+                else if (choice == 6)
                 {
                     // Exit the library
                     Console.Clear();
@@ -148,7 +155,6 @@ namespace LibraryOOP
             return authorMatch;
         }
 
-
         public virtual List<Book> SearchByTitle()
         {
             string userInput;
@@ -194,6 +200,17 @@ namespace LibraryOOP
 
         }
 
+        public static void DeleteData()
+
+        {
+            string path=@"../../../Books.txt";
+            var fi1 = new FileInfo(path);
+            fi1.Delete();
+
+
+            Console.WriteLine("You have burned down the Library and set human Civilization back by a few hundred years");
+      
+        }
 
     }
 
