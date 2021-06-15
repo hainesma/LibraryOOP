@@ -93,8 +93,16 @@ namespace LibraryOOP
 
                 // Display a list of books that are checked out
                 // Use a lambda expression to select Book objects with status "Checked Out"
-                List<Book> checkedOut = Books.Where(book => book.CheckStatus() == "CheckedOut").ToList();
+                List<Book> checkedOut = Books.Where(book => book.CheckStatus() == "CheckedOut" || book.CheckStatus() == "Overdue!").ToList();
                 //Console.WriteLine($"Test: ");
+                if(checkedOut.Count == 0)
+                {
+                    Console.Clear();
+                    Console.WriteLine("No books are currently checked out");
+                    Console.WriteLine();
+                    goOn = false;
+                    continue;
+                }
                 foreach (Book checkedOutBook in checkedOut)
                 {
                     Console.WriteLine($"{checkedOutBook.Title}");
