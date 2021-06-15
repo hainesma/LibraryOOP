@@ -86,6 +86,7 @@ namespace LibraryOOP
             catch (Exception e)
             {
                 Console.WriteLine(e.Message);
+                output = GetInteger(maxChoices);
             }
             return output;
         }

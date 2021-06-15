@@ -38,7 +38,7 @@ namespace LibraryOOP
                 Console.WriteLine();
 
                 // Get user's selection
-                int choice = Program.GetInteger(4);
+                int choice = Program.GetInteger(3);
 
                 // If statements to route choices
                 if (choice == 1)

@@ -117,12 +117,13 @@ namespace LibraryOOP
         public virtual Book PickABook(List<Book> books, string message)
         {
             Console.WriteLine(message);
+            Book selection = new Book("null", "null", "null", new DateTime(01, 01, 01));
             for(int i = 0; i < books.Count; i++)
             {
                 Console.WriteLine($"{i + 1}: {books[i].Title}");
             }
             Console.WriteLine("Please select a book to proceed.");
-            Book selection = books[Program.GetInteger(books.Count) - 1];
+            selection = books[Program.GetInteger(books.Count) - 1];
             return selection;
         }
 
