@@ -79,7 +79,7 @@ namespace LibraryOOP
 
         public virtual string Checkout()
         {
-            checkStatus();
+            CheckStatus();
             string checkingOut;
             if (Status == "OnShelf")
             {
@@ -109,7 +109,8 @@ namespace LibraryOOP
 
         public virtual DateTime Return()
         {
-            checkStatus();
+            Console.Clear();
+            CheckStatus();
             if (Status == "CheckedOut")
             {
                 Console.WriteLine("Thank you for returning your book");
@@ -138,7 +139,7 @@ namespace LibraryOOP
 
         }
 
-        public virtual string checkStatus()
+        public virtual string CheckStatus()
         {
             DateTime current = DateTime.Now;
             DateTime returnDate = new DateTime(0001, 01, 01);
